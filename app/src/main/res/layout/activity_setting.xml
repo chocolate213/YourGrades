@@ -33,7 +33,7 @@
                     android:layout_marginTop="4.0dp"
                     android:gravity="center_vertical"
                     android:text="自动刷新教务网成绩"
-                    android:textColor="#ff333333"
+                    android:textColor="#ff666666"
                     android:textSize="17sp" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
                     android:layout_below="@id/text_text"
                     android:textSize="12sp"
                     android:textColor="#ff999999"
-                    android:text="自动刷新频率为5分钟(此功能未验证)"/>
+                    android:text="自动刷新频率为5分钟(此功能暂时移除)"/>
             </LinearLayout>
 
             <Switch
@@ -52,6 +52,7 @@
                 android:layout_gravity="center"
                 android:textOn="开"
                 android:textOff="关"
+                android:clickable="false"
                 android:checked="false"
                 android:id="@+id/auto_refresh_switch" />
         </LinearLayout>
@@ -92,10 +93,10 @@
             android:layout_marginBottom="10.0dip"
             android:layout_marginTop="10.0dip"
             android:gravity="center_vertical"
-            android:text="切换账号"
-            android:textColor="#ff333333"
+            android:text="切换账号(暂时移除功能)"
+            android:textColor="#ff666666"
             android:textSize="17sp"
-            android:clickable="true" />
+            android:clickable="false" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

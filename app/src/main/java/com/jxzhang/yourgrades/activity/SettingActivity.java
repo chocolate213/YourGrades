@@ -106,46 +106,46 @@ public class SettingActivity extends Activity {
         /**
          * 切换账号
          */
-        mSwitchAccountText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder dialog = new AlertDialog.Builder(SettingActivity.this);        //第一步 获取AlertDialogBuilder对象
-
-                dialog.setTitle("切换账户？");
-                dialog.setMessage("将会注销当前账户并返回登录界面");
-                dialog.setCancelable(false);
-                dialog.setNegativeButton("确认", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (MainActivity.isLongRunningRequestServiceWorked()) {
-                            //如果切换账户，那么关闭当前账户获取成绩信息服务
-                            Log.d("Test", "切换账户：当前服务状态" + MainActivity.isLongRunningRequestServiceWorked());
-                            Intent longRunningRequestServiceIntent = new Intent(SettingActivity.this, LongRunningRequestService.class);
-                            stopService(longRunningRequestServiceIntent);
-                        }
-                        //将标记设置为false
-                        isSwitchCheckedEditor.putBoolean("is_checked",false);
-                        isSwitchCheckedEditor.commit();
-                        Intent startLoginIntent = new Intent(SettingActivity.this, LoginActivity.class);
-                        startActivity(startLoginIntent);
-                        //关闭主Activity
-                        MainActivity.mMainActivityInstance.finish();
-                        //关闭ServiceActivity
-                        finish();
-                    }
-                });
-                dialog.setPositiveButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-
-                dialog.show();
-
-            }
-        });
+//        mSwitchAccountText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                AlertDialog.Builder dialog = new AlertDialog.Builder(SettingActivity.this);        //第一步 获取AlertDialogBuilder对象
+//
+//                dialog.setTitle("切换账户？");
+//                dialog.setMessage("将会注销当前账户并返回登录界面");
+//                dialog.setCancelable(false);
+//                dialog.setNegativeButton("确认", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        if (MainActivity.isLongRunningRequestServiceWorked()) {
+//                            //如果切换账户，那么关闭当前账户获取成绩信息服务
+//                            Log.d("Test", "切换账户：当前服务状态" + MainActivity.isLongRunningRequestServiceWorked());
+//                            Intent longRunningRequestServiceIntent = new Intent(SettingActivity.this, LongRunningRequestService.class);
+//                            stopService(longRunningRequestServiceIntent);
+//                        }
+//                        //将标记设置为false
+//                        isSwitchCheckedEditor.putBoolean("is_checked",false);
+//                        isSwitchCheckedEditor.commit();
+//                        Intent startLoginIntent = new Intent(SettingActivity.this, LoginActivity.class);
+//                        startActivity(startLoginIntent);
+//                        //关闭主Activity
+//                        MainActivity.mMainActivityInstance.finish();
+//                        //关闭ServiceActivity
+//                        finish();
+//                    }
+//                });
+//                dialog.setPositiveButton("取消", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                    }
+//                });
+//
+//                dialog.show();
+//
+//            }
+//        });
         /**
          * 启动UpdataLogActivity
          */
