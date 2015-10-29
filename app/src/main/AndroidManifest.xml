@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <!-- Push service 运行需要的权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -23,7 +22,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-
 
     <application
         android:name=".util.MyApplication"
@@ -86,19 +84,19 @@
         </activity>
         <activity
             android:name=".activity.CETSearcherActivity"
-            android:theme="@style/Theme.MyActionBar"
-            android:label="@string/title_activity_cetsearcher" >
+            android:label="@string/title_activity_cetsearcher"
+            android:theme="@style/Theme.MyActionBar" >
         </activity>
         <activity
             android:name=".activity.CETSearcherInfoActivity"
-            android:theme="@style/Theme.MyActionBar"
-            android:label="@string/title_activity_cetsearcher_info" >
+            android:label="@string/title_activity_cetsearcher_info"
+            android:theme="@style/Theme.MyActionBar" >
         </activity>
-
 
         <!-- push service start -->
         <!-- 用于接收系统消息以保证PushService正常运行 -->
-        <receiver android:name="com.baidu.android.pushservice.PushServiceReceiver"
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
             android:process=":bdservice_v1" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -112,8 +110,9 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-        <!-- Push服务接收客户端发送的各种请求-->
-        <receiver android:name="com.baidu.android.pushservice.RegistrationReceiver"
+        <!-- Push服务接收客户端发送的各种请求 -->
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
             android:process=":bdservice_v1" >
             <intent-filter>
                 <action android:name="com.baidu.android.pushservice.action.METHOD" />
@@ -121,20 +120,47 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <service android:name="com.baidu.android.pushservice.PushService" android:exported="true"
+
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
             android:process=":bdservice_v1" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
             </intent-filter>
         </service>
         <!-- 4.4版本新增的CommandService声明，提升小米和魅族手机上的实际推送到达率 -->
-        <service android:name="com.baidu.android.pushservice.CommandService"
+        <service
+            android:name="com.baidu.android.pushservice.CommandService"
             android:exported="true" />
         <!-- push结束 -->
 
+        <receiver android:name=".receiver.MyPushManagerReceiver" >
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <!-- 接收bind、setTags等method的返回结果 -->
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <!-- 接收通知点击事件，和通知自定义内容 -->
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 在百度开发者中心查询应用的API Key -->
+        <meta-data
+            android:name="api_key"
+            android:value="TAGWpIy073QWwoaIQGGN7YEG" />
+
+        <activity
+            android:name=".activity.PushMessageReceiverActivity"
+            android:label="@string/title_activity_push_message_receiver"
+            android:theme="@style/Theme.MyActionBar" >
+        </activity>
     </application>
 
 </manifest>

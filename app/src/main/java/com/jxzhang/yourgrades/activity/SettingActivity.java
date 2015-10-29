@@ -17,9 +17,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
 import com.jxzhang.yourgrades.R;
 import com.jxzhang.yourgrades.service.LongRunningRequestService;
 import com.jxzhang.yourgrades.util.MyApplication;
+import com.jxzhang.yourgrades.util.Utils;
 
 import java.util.ArrayList;
 
@@ -29,11 +32,13 @@ import java.util.ArrayList;
  */
 public class SettingActivity extends Activity {
     //声明控件
-    TextView mFinishAllText;
-    TextView mSwitchAccountText;
-    TextView mUpdataLogText;
-    Switch mAutoRefreshSwitchButton;
-    TextView mAboutText;
+    private TextView mFinishAllText;
+    private TextView mSwitchAccountText;
+    private TextView mUpdataLogText;
+    private Switch mAutoRefreshSwitchButton;
+    private Switch mPushReceiverSwitchButton;
+    private TextView mAboutText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,22 +50,31 @@ public class SettingActivity extends Activity {
         mSwitchAccountText = (TextView) findViewById(R.id.text_switch_account);
         mUpdataLogText = (TextView) findViewById(R.id.text_updata_log);
         mAutoRefreshSwitchButton = (Switch) findViewById(R.id.auto_refresh_switch);
-
+        mPushReceiverSwitchButton = (Switch)findViewById(R.id.auto_receive_message);
 
         //初始化SharedPreference
         final SharedPreferences isSwitchCheckedPreference = MyApplication.getContext().getSharedPreferences("is_switch_checked", MODE_PRIVATE);
         final SharedPreferences.Editor isSwitchCheckedEditor = isSwitchCheckedPreference.edit();
+
         //初始化ServiceSharedPreference
         final SharedPreferences serviceSharedPreference = MyApplication.getContext().getSharedPreferences("service_password",MODE_PRIVATE);
         final SharedPreferences.Editor serviceSharedPreferenceEdit = serviceSharedPreference.edit();
 
 
 
-        //获取SharedPreference中存储的是true还是false
-        boolean isChecked = isSwitchCheckedPreference.getBoolean("is_checked", false);
-        if (isChecked) {     //如果SharedPreference中存储的是true，那将按钮设置为true
+        //获取SharedPreference中存储的is_auto_refresh_switch_checked是true还是false
+        boolean isAutoRefreshSwitchChecked = isSwitchCheckedPreference.getBoolean("is_auto_refresh_switch_checked", false);
+        if (isAutoRefreshSwitchChecked) {     //如果SharedPreference中存储的是true，那将按钮设置为true
             mAutoRefreshSwitchButton.setChecked(true);
         }
+        //获取SharedPreference中存储的is_auto_refresh_switch_checked是true还是false
+        boolean isAutoReceiveMessageChecked = isSwitchCheckedPreference.getBoolean("is_auto_receive_message", false);
+        if (isAutoReceiveMessageChecked) {     //如果SharedPreference中存储的是true，那将按钮设置为true
+            mPushReceiverSwitchButton.setChecked(true);
+            //并直接绑定
+            PushManager.startWork(MyApplication.getContext(), PushConstants.LOGIN_TYPE_API_KEY, Utils.getMetaValue(MyApplication.getContext(), "api_key"));
+        }
+
 
         mAboutText = (TextView)findViewById(R.id.text_about);
         mAboutText.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +85,23 @@ public class SettingActivity extends Activity {
             }
         });
 
+        mPushReceiverSwitchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isSwitchCheckedEditor.putBoolean("is_auto_receive_message", true);
+                    isSwitchCheckedEditor.apply();
+                    //启动无账号绑定服务
+                    PushManager.startWork(MyApplication.getContext(),PushConstants.LOGIN_TYPE_API_KEY,Utils.getMetaValue(MyApplication.getContext(), "api_key"));
+
+                } else {
+                    isSwitchCheckedEditor.putBoolean("is_auto_receive_message", false);
+                    isSwitchCheckedEditor.apply();
+                    //解绑无账号绑定服务
+                    PushManager.stopWork(MyApplication.getContext());
+                }
+            }
+        });
 
         /**
          * 监听Switch
@@ -79,10 +110,10 @@ public class SettingActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Toast.makeText(SettingActivity.this, "自动刷新成绩服务已开启，如需关闭请在此处关闭或杀掉后台进程，否则该服务会一直在后台运行！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingActivity.this, "自动刷新成绩服务已开启", Toast.LENGTH_LONG).show();
                     //如果按钮处于on，向SharedPreference中存入数据true
-                    isSwitchCheckedEditor.putBoolean("is_checked", true);
-                    isSwitchCheckedEditor.commit();
+                    isSwitchCheckedEditor.putBoolean("is_auto_refresh_switch_checked", true);
+                    isSwitchCheckedEditor.apply();
                     if (MainActivity.isLongRunningRequestServiceWorked()) {
                         //如果服务已经在运行，此处不执行任何操作
                     } else {
@@ -92,8 +123,8 @@ public class SettingActivity extends Activity {
                     }
                 } else {
                     //如果按钮处于off，向SharedPreference中存入false
-                    isSwitchCheckedEditor.putBoolean("is_checked", false);
-                    isSwitchCheckedEditor.commit();
+                    isSwitchCheckedEditor.putBoolean("is_auto_refresh_switch_checked", false);
+                    isSwitchCheckedEditor.apply();
                     if (MainActivity.isLongRunningRequestServiceWorked()) {
                         //如果服务正在运行，那么结束这个服务
                         Intent longRunningRequestServiceIntent = new Intent(SettingActivity.this, LongRunningRequestService.class);
@@ -126,7 +157,7 @@ public class SettingActivity extends Activity {
 //                            stopService(longRunningRequestServiceIntent);
 //                        }
 //                        //将标记设置为false
-//                        isSwitchCheckedEditor.putBoolean("is_checked",false);
+//                        isSwitchCheckedEditor.putBoolean("is_auto_refresh_switch_checked",false);
 //                        isSwitchCheckedEditor.commit();
 //                        Intent startLoginIntent = new Intent(SettingActivity.this, LoginActivity.class);
 //                        startActivity(startLoginIntent);
@@ -178,7 +209,7 @@ public class SettingActivity extends Activity {
                             stopService(longRunningRequestServiceIntent);
                         }
                         //将标记设置为false
-                        isSwitchCheckedEditor.putBoolean("is_checked",false);
+                        isSwitchCheckedEditor.putBoolean("is_auto_refresh_switch_checked",false);
                         isSwitchCheckedEditor.commit();
                         MainActivity.mMainActivityInstance.finish();
                         finish();

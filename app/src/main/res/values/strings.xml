@@ -13,6 +13,7 @@
     <string name="title_activity_feature">FeatureActivity</string>
     <string name="title_activity_cetsearcher">CETSearcherActivity</string>
     <string name="title_activity_cetsearcher_info">CETSearcherInfoActivity</string>
+    <string name="title_activity_push_message_receiver">PushMessageReceiverActivity</string>
 
 
 

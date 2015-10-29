@@ -33,7 +33,7 @@
                     android:layout_marginTop="4.0dp"
                     android:gravity="center_vertical"
                     android:text="自动刷新教务网成绩"
-                    android:textColor="#ff666666"
+                    android:textColor="#ff999999"
                     android:textSize="17sp" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,8 +56,51 @@
                 android:checked="false"
                 android:id="@+id/auto_refresh_switch" />
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4.0dp"
+                    android:layout_marginTop="4.0dp"
+                    android:gravity="center_vertical"
+                    android:text="接收推送消息"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4.0dp"
+                    android:layout_below="@id/text_text"
+                    android:textSize="12sp"
+                    android:textColor="#ff999999"
+                    android:text="接收校园信息或通知"/>
+            </LinearLayout>
 
+            <Switch
+                android:id="@+id/auto_receive_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textOn="开"
+                android:textOff="关"
+                android:clickable="true"
+                android:checked="false" />
+        </LinearLayout>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,7 +137,7 @@
             android:layout_marginTop="10.0dip"
             android:gravity="center_vertical"
             android:text="切换账号(此功能暂时移除)"
-            android:textColor="#ff666666"
+            android:textColor="#ff999999"
             android:textSize="17sp"
             android:clickable="false" />
     </LinearLayout>

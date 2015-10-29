@@ -1,9 +1,13 @@
 package com.jxzhang.yourgrades.receiver;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.baidu.android.pushservice.PushMessageReceiver;
+import com.jxzhang.yourgrades.activity.PushMessageReceiverActivity;
+import com.jxzhang.yourgrades.util.MyApplication;
 
 import java.util.List;
 
@@ -27,7 +31,13 @@ public class MyPushManagerReceiver extends PushMessageReceiver {
      */
     @Override
     public void onBind(Context context, int errorCode, String appid, String userId, String channelId, String requestId) {
-        Log.d(TAG,"METHOD=onBind"+"\nErrorCode="+errorCode+"\nAppid="+ appid + "\nuserId=" + userId + "\nChannelId=" + channelId + "\nrequestId=" + requestId);
+        Log.d(TAG, "METHOD=onBind" + "\nErrorCode=" + errorCode + "\nAppid=" + appid + "\nuserId=" + userId + "\nChannelId=" + channelId + "\nrequestId=" + requestId);
+        if (errorCode == 0){
+            Toast.makeText(MyApplication.getContext(), "绑定成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MyApplication.getContext(), "绑定失败，请把这段错误代码告诉我："+errorCode+"非常感谢", Toast.LENGTH_LONG).show();
+        }
+
     }
     /**
      * PushManager.stopWork()的回调函数。
@@ -38,7 +48,13 @@ public class MyPushManagerReceiver extends PushMessageReceiver {
      */
     @Override
     public void onUnbind(Context context, int errorCode, String requestId) {
-        Log.d(TAG,"METHOD=onUnbind"+"\nErrorCode="+errorCode+"\nrequestId=" + requestId);
+        Log.d(TAG, "METHOD=onUnbind" + "\nErrorCode=" + errorCode + "\nrequestId=" + requestId);
+        if(errorCode == 0){
+            Toast.makeText(MyApplication.getContext(), "解绑成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MyApplication.getContext(), "解绑失败，请把这段错误代码告诉我："+errorCode+ "非常感谢", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     /**
@@ -105,8 +121,11 @@ public class MyPushManagerReceiver extends PushMessageReceiver {
      */
     @Override
     public void onNotificationClicked(Context context, String title, String description, String customContentString) {
-        Log.d(TAG,"METHOD=onNotificationClickedRun"+"\nTitle="+title+"\nDescription="+ description+"\ncustomContentString="+customContentString);
-
+        Log.d(TAG, "METHOD=onNotificationClickedRun" + "\nTitle=" + title + "\nDescription=" + description + "\ncustomContentString=" + customContentString);
+//        Intent intent = new Intent(context.getApplicationContext(),PushMessageReceiverActivity.class);
+//        intent.putExtra("title",title);
+//        intent.putExtra("description", description);
+//        context.getApplicationContext().startActivity(intent);
     }
 
 
