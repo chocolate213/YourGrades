@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YourGrades</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="remember_password">Remember Password</string>
+    <string name="auto_login">Auto Login</string>
+
+    <string name="cet_marks_menu_item_text">CET分数解释</string>
+
+    <string name="cet_hint_zkh">准考证号</string>
+    <string name="cet_hint_name">姓名</string>
+</resources>

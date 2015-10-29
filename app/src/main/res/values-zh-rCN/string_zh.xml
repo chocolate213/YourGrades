@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">学院助手</string>
+    <string name="action_settings">设置</string>
+    <string name="action_logout">设置</string>
+    <string name="title_activity_welcome">学院助手</string>
+    <string name="title_activity_feedback">反馈</string>
+    <string name="remember_password">记住密码</string>
+    <string name="auto_login">自动登录</string>
+
+    <string name="title_activity_login">Sign in</string>
+    <string name="exit_the_program">再按一次返回键退出程序</string>
+
+    <string name="cet_marks_menu_item_text">CET分数解释</string>
+    <string name="cet_hint_zkh">准考证号</string>
+    <string name="cet_hint_name">姓名</string>
+
+</resources>

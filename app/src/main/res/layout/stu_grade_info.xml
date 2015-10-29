@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/class_name_text"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="12sp"
+        android:text="TEST"/>
+    <TextView
+        android:id="@+id/grade_text"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="14sp"
+        android:text="100.00"/>
+</LinearLayout>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_student_number">Student ID</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+
+    <string name="error_invalid_student_id">This student id is too short</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">ERROR Incorrect username or password!</string>
+    <string name="error_network">Network ERROR occurred!</string>
+    <string name="error_system">System ERROR occurred!</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="title_text">Login.....</string>
+    <string name="is_landing">正在撬动服务器机柜...</string>
+
+    <string name="easter_egg_1">正在撬动服务器柜...</string>
+    <string name="easter_egg_2">正在给邻桌使眼色...</string>
+    <string name="easter_egg_3">正在踢前桌的凳子...</string>
+    <string name="easter_egg_4">正在掷骰子决定选项...</string>
+    <string name="easter_egg_5">正在思考考试结束后到底去吃点什么...</string>
+    <string name="easter_egg_6">正在观察监考教师动向...</string>
+    <string name="easter_egg_7">正在计算考试剩余时间...</string>
+    <string name="easter_egg_8">正在观察监考教师视线范围...</string>
+    <string name="easter_egg_9">正在向服务器上传木马...</string>
+    <string name="easter_egg_0">正在评估扔小纸条风险...</string>
+
+</resources>

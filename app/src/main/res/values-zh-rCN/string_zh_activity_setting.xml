@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="switch_on">开</string>
+    <string name="switch_off">关</string>
+    <string name="about_image">about_page_image</string>
+
+
+</resources>

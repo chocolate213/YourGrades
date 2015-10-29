@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="switch_on">ON</string>
+    <string name="switch_off">OFF</string>
+
+    <string name="about_image">about_page_image</string>
+</resources>

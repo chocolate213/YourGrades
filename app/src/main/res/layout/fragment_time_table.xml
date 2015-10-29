@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffebebeb"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearlayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffebebeb"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinner_class_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.5"
+            android:gravity="center" />
+
+        <Spinner
+            android:id="@+id/spinner_time_table_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.3"
+            android:gravity="center" />
+
+
+        <Button
+            android:id="@+id/button_commit"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="#666666"
+            style="?android:textAppearanceSmall"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.2"
+            android:text="@string/commit"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/time_table_info_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="点了提交之后不出意外的话课表将会出现在这里"/>
+    <WebView
+        android:id="@+id/web_view_time_table"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

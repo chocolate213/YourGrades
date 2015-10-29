@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.MyActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <!-- 隐藏ActionBar下阴影线  -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 隐藏ActionBar Tab 中间分割线  -->
+        <item name="android:actionBarDivider">@null</item>
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_teal_holo_light_dark_1</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Teal_holo_light_dark_1</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Teal_holo_light_dark_1</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Teal_holo_light_dark_1</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Teal_holo_light_dark_1</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Teal_holo_light_dark_1</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_teal_holo_light_dark_1</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_teal_holo_light_dark_1</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Teal_holo_light_dark_1</item>
+        <!-- Light.DarkActionBar specific -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.Teal_holo_light_dark_1.Widget</item>
+
+    </style>
+
+</resources>

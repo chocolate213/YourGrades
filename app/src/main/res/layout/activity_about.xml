@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffebebeb"
+    android:orientation="vertical"
+    tools:context="com.jxzhang.yourgrades.activity.AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:text="学院助手1.3.0"
+            android:textSize="18sp"
+            android:textColor="#999999"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/text_feed_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:gravity="center_vertical"
+            android:text="反馈"
+            android:textColor="#ff333333"
+            android:onClick="aboutLayoutBtnOnClick"
+            android:textSize="17sp"
+            android:clickable="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/text_feature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical"
+            android:onClick="aboutLayoutBtnOnClick"
+            android:text="功能介绍"
+            android:clickable="true"
+            android:textColor="#ff333333"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|bottom"
+        android:layout_marginBottom="5dp"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:text="意见反馈：chocolatepie213@gmail.com\nDesign By Jiaxing Zhang © 2015"/>
+
+</LinearLayout>
