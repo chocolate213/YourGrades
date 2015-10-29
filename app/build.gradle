@@ -28,4 +28,5 @@ dependencies {
     compile files('libs/org.apache.http.legacy.jar')
     compile 'com.android.support:support-v4:23.0.1'
     compile files('libs/jsoup-1.8.3.jar')
+    compile files('libs/pushservice-4.5.3.48.jar')
 }

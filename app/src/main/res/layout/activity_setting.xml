@@ -93,7 +93,7 @@
             android:layout_marginBottom="10.0dip"
             android:layout_marginTop="10.0dip"
             android:gravity="center_vertical"
-            android:text="切换账号(暂时移除功能)"
+            android:text="切换账号(此功能暂时移除)"
             android:textColor="#ff666666"
             android:textSize="17sp"
             android:clickable="false" />
