@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8.0dp"
+                    android:layout_marginBottom="6.0dp"
                     android:layout_below="@id/text_text"
                     android:textSize="12sp"
                     android:textColor="#ff999999"
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1.5dp"
-                    android:layout_marginTop="8.0dp"
+                    android:layout_marginTop="6.0dp"
                     android:gravity="center_vertical"
                     android:text="接收推送消息"
                     android:textColor="#ff333333"
