@@ -23,6 +23,7 @@ import com.jxzhang.yourgrades.activity.MainActivity;
 import com.jxzhang.yourgrades.receiver.AlarmReceiver;
 import com.jxzhang.yourgrades.security.DES3Utils;
 import com.jxzhang.yourgrades.util.HTMLParser;
+import com.jxzhang.yourgrades.util.HTMLParser_2;
 import com.jxzhang.yourgrades.util.HttpUtil;
 import com.jxzhang.yourgrades.util.MyApplication;
 import com.jxzhang.yourgrades.util.StudentInfo;
@@ -62,7 +63,7 @@ public class LongRunningRequestService extends Service{
         SharedPreferences preferences = MyApplication.getContext().getSharedPreferences("stu_info", Context.MODE_PRIVATE);      //获取存储成绩SharedPreference
         SharedPreferences mPreferences = MyApplication.getContext().getSharedPreferences("list_size", Context.MODE_PRIVATE);    //获取存储成绩科目数SharedPreference
         String mData = preferences.getString("stu_grade_info", "");     //取出成绩信息
-        HTMLParser htmlParser = new HTMLParser(mData);                  //解析
+        HTMLParser_2 htmlParser = new HTMLParser_2(mData);                  //解析
         List<StudentInfo> list_stu = htmlParser.getList();              //获取解析到的List集合
         SharedPreferences.Editor mEdit = mPreferences.edit();
         int num = mPreferences.getInt("list_length", 0);                //获取解析到List集合的大小

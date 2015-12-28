@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.jxzhang.yourgrades.R;
 import com.jxzhang.yourgrades.adapter.StuGradeInfoAdapter;
 import com.jxzhang.yourgrades.util.HTMLParser;
+import com.jxzhang.yourgrades.util.HTMLParser_2;
 import com.jxzhang.yourgrades.util.MyApplication;
 import com.jxzhang.yourgrades.util.StudentInfo;
 
@@ -31,7 +32,7 @@ import java.util.List;
  */
 public class GradeFragment extends Fragment{
 
-    HTMLParser htmlParser;
+    HTMLParser_2 htmlParser_2;
     private List<StudentInfo> mList;
     ListView listView;
     @Override
@@ -45,8 +46,8 @@ public class GradeFragment extends Fragment{
         SharedPreferences preferences = MyApplication.getContext().getSharedPreferences("stu_info", Context.MODE_PRIVATE);
         String mData = preferences.getString("stu_grade_info", "");
         //mPaster();
-        htmlParser = new HTMLParser(mData);
-        List<StudentInfo> list_stu = htmlParser.getList();
+        htmlParser_2 = new HTMLParser_2(mData);
+        List<StudentInfo> list_stu = htmlParser_2.getList();
         mList = new ArrayList<StudentInfo>(list_stu);
     }
     @Nullable

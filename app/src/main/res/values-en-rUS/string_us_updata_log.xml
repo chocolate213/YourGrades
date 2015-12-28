@@ -70,5 +70,10 @@
     <string name="v1_3_2_beta_date">2015年10月29日</string>
     <string name="v1_3_2_beta_log">—加入校园信息推送功能(测试)\n—移除教务网登录入口\n—移除切换账户设置项\n—移除自动刷新教务网成绩设置项</string>
 
+    <!--V1.3.5 Beta -->
+    <string name="v1_3_5_beta">1.3.5 Beta</string>
+    <string name="v1_3_5_beta_date">2015年12月28日</string>
+    <string name="v1_3_5_beta_log">—恢复教务网登录入口\n—恢复切换账户设置项\n—恢复自动刷新教务网成绩设置项\n—修改HTML解析算法，当前显示成绩由有效成绩修改为原始成绩</string>
+
 
 </resources>
