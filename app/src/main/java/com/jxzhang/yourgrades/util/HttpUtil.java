@@ -67,7 +67,7 @@ public class HttpUtil {
         Log.d("Test","loginVerify run");
         HttpClient client = new DefaultHttpClient();
         HttpResponse httpResponse;
-        String url = Constants.LOGIN_URL_IN;
+        String url = Constants.LOGIN_URL_OUT;
         HttpPost httpRequest = new HttpPost(url);
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();    //Post数据给服务器：学号，密码，权限
@@ -105,15 +105,15 @@ public class HttpUtil {
     private boolean judgePassword() {
         SharedPreferences preferences = MyApplication.getContext().getSharedPreferences("stu_info", Context.MODE_PRIVATE);
         String result = "";
-        String url = Constants.STU_GET_SCORE_URL_IN;
+        String url = Constants.STU_GET_SCORE_URL_OUT;       //OUT NETWORK
         HttpPost httpRequest = new HttpPost(url);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("zfx_flag", "0"));
-        params.add(new BasicNameValuePair("zxf", "0"));
-        params.add(new BasicNameValuePair("sel_xq", "1"));
-        params.add(new BasicNameValuePair("SJ", "1"));
-        params.add(new BasicNameValuePair("SelXNXQ", "2"));
-        params.add(new BasicNameValuePair("sel_xn", "2014"));
+        params.add(new BasicNameValuePair("zfx_flag", "0"));        //主辅修标记
+        params.add(new BasicNameValuePair("zxf", "0"));             //
+        params.add(new BasicNameValuePair("sel_xq", "0"));          //选择学期
+        params.add(new BasicNameValuePair("SJ", "1"));              //原始成绩/有效成绩
+        params.add(new BasicNameValuePair("SelXNXQ", "2"));         //学期学年
+        params.add(new BasicNameValuePair("sel_xn", "2015"));       //学期
         Log.d("Test",cookies.get(0).getValue()+"");
         httpRequest.setHeader("Cookie", "ASP.NET_SessionId=" + cookies.get(0).getValue());
         try {
@@ -129,6 +129,7 @@ public class HttpUtil {
                     sb.append(data);
                 }
                 result = sb.toString();
+                System.out.println(result);
 
                 Log.d("Test",result);
                 if (result.contains("系统提示")) {
