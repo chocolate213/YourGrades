@@ -46,7 +46,7 @@ public class LongRunningRequestService extends Service{
 
     byte[] mPasswordByteData;
     private static final int NOTIFICATION_ID = 0x00000001;
-    private static final int _5MINUTE = 5 * 60 * 1000;          //五分钟请求一次服务器
+    private static final int _5MINUTE = 30 * 1000;          //五分钟请求一次服务器
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -68,6 +68,9 @@ public class LongRunningRequestService extends Service{
         SharedPreferences.Editor mEdit = mPreferences.edit();
         int num = mPreferences.getInt("list_length", 0);                //获取解析到List集合的大小
         int newNum = list_stu.size();                                   //当前List集合的大小
+        Log.d("Test","目前成绩总数-----------"+num);
+        Log.d("Test","请求获取到的成绩总数----"+newNum);
+
         if (newNum > num){                                              //如果当前科目数大于存储科目数
             int theNum = newNum - num;                                  //获取差值
             mEdit.putInt("list_length",newNum);                         //将新值存入到SharedPreference中
