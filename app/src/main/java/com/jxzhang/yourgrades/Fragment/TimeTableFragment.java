@@ -124,7 +124,7 @@ public class TimeTableFragment extends Fragment {
             public void onClick(View v) {
                 timeTableInfoText.setVisibility(View.GONE);
                 web_view.setVisibility(View.VISIBLE);
-                String url = "http://172.16.100.1/ZNPK/KBFB_ClassSel_rpt.aspx";
+                String url = "http://jwgl.hhhxy.cn/ZNPK/KBFB_ClassSel_rpt.aspx";
                 String postDate = "Sel_XNXQ=20150&Sel_XZBJ=" + classCode + "&type=" + timeTableTypeCode;
                 web_view.postUrl(url,
                         EncodingUtils.getBytes(postDate, "BASE64"));
