@@ -173,7 +173,7 @@ public class CETSearcherActivity extends Activity {
      * @return
      */
     public boolean isNameValid(String name){
-        return name.length()>2&&name.length()<4;
+        return name.length()>1&&name.length()<4;
     }
 
     @Override

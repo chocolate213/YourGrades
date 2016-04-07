@@ -24,16 +24,23 @@ public class AboutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        //初始化控件
+
         mFeedBack = (TextView)findViewById(R.id.text_feed_back);
         mAppFeature = (TextView)findViewById(R.id.text_feature);
 
-        //设置标题
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(FEEDBACK);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
+        initActionBar();
+    }
 
+    /**
+     * 初始化ActionBar
+     */
+    private void initActionBar() {
+        ActionBar actionBar = getActionBar();
+        if(actionBar != null){
+            actionBar.setTitle(FEEDBACK);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(false);
+        }
     }
 
     /**

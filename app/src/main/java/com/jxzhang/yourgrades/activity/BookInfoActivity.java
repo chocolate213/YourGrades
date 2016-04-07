@@ -20,7 +20,6 @@ import com.jxzhang.yourgrades.util.MyApplication;
 
 public class BookInfoActivity extends Activity {
 
-    //声明控件
     private WebView web_view;
     final Activity activity = this;
 
@@ -30,19 +29,19 @@ public class BookInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_info);
 
-        //初始化控件
         web_view = (WebView) findViewById(R.id.web_view);
-        //获取书名、图书代码
-        String bookName = getIntent().getStringExtra("book_name");
-        String bookCode = getIntent().getStringExtra("book_code");
 
-        //将页面标题设置为书名
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(bookName);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
+        final String bookName = getIntent().getStringExtra("book_name");
+        final String bookCode = getIntent().getStringExtra("book_code");
 
-        String url ="http://lib.hhhxy.cn:88/ggjs/ckgc.jsp?xz="+bookCode+"&jstj=%D5%FD%CC%E2%C3%FB&value1="+bookName+"&jsfs=%D6%D0%BC%E4%C6%A5%C5%E4&pxtj=ZTM&pagesize=500&goNum=1&servertype=&ljh=&tslx=zw&ckyy=yy&page=1&jstj=%D5%FD%CC%E2%C3%FB&value1="+bookName+"&jsfs=%D6%D0%BC%E4%C6%A5%C5%E4&pxtj=ZTM&pagesize=500";
+        setBooknameToActionBar(bookName);
+
+        String url = "http://lib.hhhxy.cn:88/ggjs/ckgc.jsp?xz=" + bookCode + "&jstj=%D5%FD%CC%E2%C3%FB&value1=" + bookName + "&jsfs=%D6%D0%BC%E4%C6%A5%C5%E4&pxtj=ZTM&pagesize=500&goNum=1&servertype=&ljh=&tslx=zw&ckyy=yy&page=1&jstj=%D5%FD%CC%E2%C3%FB&value1=" + bookName + "&jsfs=%D6%D0%BC%E4%C6%A5%C5%E4&pxtj=ZTM&pagesize=500";
+
+        initBookInfoWebView(url);
+    }
+
+    private void initBookInfoWebView(String url) {
 
         web_view.getSettings().setJavaScriptEnabled(true);
         web_view.setWebViewClient(new WebViewClient() {
@@ -72,12 +71,20 @@ public class BookInfoActivity extends Activity {
             }
         });
 
-        //加载页面
-
         web_view.loadUrl(url);
     }
+
+    private void setBooknameToActionBar(String bookName) {
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(bookName);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(false);
+        }
+    }
+
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;
