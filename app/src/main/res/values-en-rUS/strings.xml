@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_logout">Logout</string>
+    <string name="exit_the_program">再按一次返回键退出程序</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_book_info">BookInfoActivity</string>
+    <string name="title_activity_cetsearcher">CETSearcherActivity</string>
+    <string name="title_activity_cetsearcher_info">CETSearcherInfoActivity</string>
+    <string name="title_activity_feature">FeatureActivity</string>
+    <string name="title_activity_library">LibraryActivity</string>
+    <string name="title_activity_push_message_receiver">PushMessageReceiverActivity</string>
+    <string name="title_activity_updata_log">UpdataLogActivity</string>
+
+    <string name="search_text">Search</string>
+</resources>

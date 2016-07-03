@@ -14,7 +14,76 @@
     <string name="title_activity_cetsearcher">CETSearcherActivity</string>
     <string name="title_activity_cetsearcher_info">CETSearcherInfoActivity</string>
     <string name="title_activity_push_message_receiver">PushMessageReceiverActivity</string>
+    <string name="about_image">about_page_image</string>
+    <string name="action_logout">Logout</string>
+    <string name="book_not_found">回禀小主：您要找的书可能还正写着那，要不咱回去换一本看看先？</string>
+    <string name="book_publish_date">2012</string>
+    <string name="book_publisher">人民邮电出版社</string>
+    <string name="cet_hint_name">Name</string>
+    <string name="cet_hint_zkh">ID</string>
+    <string name="cet_marks_menu_item_text">CET分数解释</string>
+    <string name="commit">Commit</string>
+    <string name="error_page_info_1">• 检查书名是否正确并尝试重新检索</string>
+    <string name="error_page_info_2">• 检查网络信号或者数据连接是否正常</string>
+    <string name="error_page_info_3">• 如果还是有问题的话要不...重启试试？</string>
+    <string name="error_page_title">呃...貌似出了点小问题...</string>
+    <string name="exit_the_program">再按一次返回键退出程序</string>
+    <string name="search_book_hint">馆藏图书查询</string>
+    <string name="searching_books">正在玩儿命请求服务器，亲稍安勿躁...</string>
+    <string name="switch_off">OFF</string>
+    <string name="switch_on">ON</string>
+    <string name="v1_0_0">1.0.0</string>
+    <string name="v1_3_5_beta_log">—恢复教务网登录入口\n—恢复切换账户设置项\n—恢复自动刷新教务网成绩设置项\n—修改HTML解析算法，当前显示成绩由有效成绩修改为原始成绩</string>
+    <string name="v1_3_5_beta_date">2015年12月28日</string>
+    <string name="v1_3_5_beta">1.3.5 Beta</string>
+    <string name="v1_3_2_beta_log">—加入校园信息推送功能(测试)\n—移除教务网登录入口\n—移除切换账户设置项\n—移除自动刷新教务网成绩设置项</string>
+    <string name="v1_3_2_beta_date">2015年10月29日</string>
+    <string name="v1_3_2_beta">1.3.2 Beta</string>
+    <string name="v1_3_1_beta_log">—加入四六级成绩查询功能</string>
+    <string name="v1_3_1_beta_date">2015年10月27日</string>
+    <string name="v1_3_1_beta">1.3.1 Beta</string>
+    <string name="v1_3_0_beta_log">—加入图书馆图书查询功能\n—由于学校外网挂了(不知道怎么就挂了...)，内网服务器配置方式跟外网还不一样...So课表、成绩查询功能暂时不可用...</string>
+    <string name="v1_3_0_beta_date">2015年10月22日</string>
+    <string name="v1_2_0_beta_log">—加入课表查询功能，目前只能查询13,14物联网班课表（全校竟然有269个班级- -）,后期可能会加入根据学号确定班级并显示默认课表功能\n—想要**课程表那么炫酷的界面当然so...费劲...所以这个课表唯一的好处就是...绝对准确...教务网上说上什么课就上什么课...</string>
+    <string name="v1_3_0_beta">1.3.0 Beta</string>
+    <string name="v1_2_0_beta_date">2015年10月13日</string>
+    <string name="v1_2_0_beta">1.2.0 Beta</string>
+    <string name="v1_1_6_beta_log">—登录界面更新</string>
+    <string name="v1_1_6_beta_date">2015年9月29日</string>
+    <string name="v1_1_6_beta">1.1.6 Beta</string>
+    <string name="v1_1_5_beta_log">—修改后台自动获取成绩信息代码逻辑\n—修复：如果没有选择记住密码再打开设置第一项开关程序崩溃问题</string>
+    <string name="v1_1_5_beta_date">2015年9月29日</string>
+    <string name="v1_1_5_beta">1.1.5 Beta</string>
+    <string name="v1_1_4_beta_log">—加入彩蛋</string>
+    <string name="v1_1_4_beta_date">2015年9月28日</string>
+    <string name="v1_1_4_beta">1.1.4 Beta</string>
+    <string name="v1_1_3_beta_log">折腾了一下午，终于在一个外国论坛找到改那两个字字体颜色的方法了（好吧不要问我怎么看懂外国论坛的，因为我也不知道...）\n—修复：Android4.4及以下系统“设置字体颜色为浅色的问题”</string>
+    <string name="v1_1_3_beta_date">2015年9月28日</string>
+    <string name="v1_1_3_beta_bug_log">—现已知华为荣耀6Plus在关闭设置第一项开关时崩溃，原因未知</string>
+    <string name="v1_1_3_beta">1.1.3 Beta</string>
+    <string name="v1_1_2_beta_log">—最低兼容版本修改为Android 4.1 (Jelly Bean)</string>
+    <string name="v1_1_2_beta_date">2015年9月28日</string>
+    <string name="v1_1_2_beta_bug_log">—如果当前系统语言为英文，更新日志可能会出现乱码\n——Android4.4.4及以下版本系统出现“设置”字体显示为浅黄色与背景色白色接近无法分辨，原因不明...</string>
+    <string name="v1_1_2_beta">1.1.2 Beta</string>
+    <string name="v1_1_1_beta_log">—修改后台自动获取成绩信息逻辑，自动刷新时间修改为5分钟</string>
+    <string name="v1_1_1_beta_date">2015年9月27日</string>
+    <string name="v1_1_1_beta">1.1.1 Beta</string>
+    <string name="v1_1_0_beta_log">—实现后台自动获取成绩信息\n—修改设置界面背景颜色\n—公测第一版</string>
+    <string name="v1_1_0_beta_date">2015年9月27日</string>
+    <string name="v1_1_0_beta_bug_log">—暂未实现自动登录，所以勾选上自动登录也没用- -\n—暂未验证后台自动获取成绩信息功能，据说学校教务网后台只有两个人有权限进入...后期将会想办法验证此功能\n—欢迎界面图片分辨率为1920*1080，如果手机屏幕比例不是16:9，欢迎界面图片将会强制拉伸为16:9导致图片失真\n—暂未实现在教务网上注销账户，但是这样占用的是服务器资源，所以并不影响使用~\n—部分补考科目成绩可能显示为0，原因暂不明\n—测试版成绩信息目前默认显示2014-2015学年度下学期有效成绩，后期版本将会加入选择学期功能</string>
+    <string name="v1_1_0_beta">1.1.0 Beta</string>
+    <string name="v1_0_1_log">—修改界面主题颜色\n—添加设置界面\n—修改软件退出逻辑\n—添加更新日志界面</string>
+    <string name="v1_0_1_date">2015年9月26日</string>
+    <string name="v1_0_1">1.0.1</string>
+    <string name="v1_0_0_log">—学院助手的第一个版本，大家多多支持！</string>
+    <string name="v1_0_0_date">2015年9月15日</string>
 
+    <string name="search_text">Search</string>
+
+    <!--V1.3.6 Beta -->
+    <string name="v1_3_6_beta">1.3.6 Beta</string>
+    <string name="v1_3_6_beta_date">2016年7月3日</string>
+    <string name="v1_3_6_beta_log">—修改软件最低兼容版本为Android5.0\n—搜索框键盘提示文字更新\n-当前成绩信息修改为2015-2016学年度第二学期原始成绩</string>
 
 
 </resources>

@@ -1,4 +1,4 @@
-package com.jxzhang.yourgrades.Fragment;
+package com.jxzhang.yourgrades.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,12 +20,9 @@ import com.jxzhang.yourgrades.util.MyApplication;
  */
 public class SchoolInfoFragment extends Fragment{
 
-
     TextView schoolInfoEnglish;
     TextView schoolInfoStandardChinese;
     TextView schoolInfoComputer;
-
-
 
     @Nullable
     @Override

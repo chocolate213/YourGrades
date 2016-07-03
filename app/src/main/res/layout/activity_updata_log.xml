@@ -679,6 +679,49 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#FFFFFF"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4.0dp"
+                    android:text="@string/v1_3_6_beta"
+                    android:textColor="#ff333333"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="4.0dp"
+                    android:text="@string/v1_3_6_beta_date"
+                    android:textColor="#FF999999"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:lineSpacingExtra="3dp"
+                    android:paddingLeft="4.0dp"
+                    android:text="@string/v1_3_6_beta_log"
+                    android:textColor="#FF333333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

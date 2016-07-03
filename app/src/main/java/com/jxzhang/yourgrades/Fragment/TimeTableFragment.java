@@ -1,6 +1,5 @@
-package com.jxzhang.yourgrades.Fragment;
+package com.jxzhang.yourgrades.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -37,10 +36,10 @@ public class TimeTableFragment extends Fragment {
     private Spinner spinnerClassName;
     private Spinner spinnerTimeTableType;
 
-    private String[] classNames = new String[]{"13级物联网工程班", "14级物联网班"};
-    private String[] classCodes = new String[]{"2013031901", "2014031901"};
-    private String[] timeTableTypes = new String[]{"格式1", "格式2"};
-    private String[] timeTableCodes = new String[]{"1", "2"};
+    private static String[] classNames = new String[]{"13级物联网工程班", "14级物联网班"};
+    private static String[] classCodes = new String[]{"2013031901", "2014031901"};
+    private static String[] timeTableTypes = new String[]{"格式1", "格式2"};
+    private static String[] timeTableCodes = new String[]{"1", "2"};
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -122,8 +121,12 @@ public class TimeTableFragment extends Fragment {
         button_commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                timeTableInfoText.setVisibility(View.GONE);
-                web_view.setVisibility(View.VISIBLE);
+                if(timeTableInfoText.getVisibility() != View.GONE){
+                    timeTableInfoText.setVisibility(View.GONE);
+                }
+                if(web_view.getVisibility() != View.VISIBLE){
+                    web_view.setVisibility(View.VISIBLE);
+                }
                 String url = "http://jwgl.hhhxy.cn/ZNPK/KBFB_ClassSel_rpt.aspx";
                 String postDate = "Sel_XNXQ=20150&Sel_XZBJ=" + classCode + "&type=" + timeTableTypeCode;
                 web_view.postUrl(url,
@@ -131,5 +134,20 @@ public class TimeTableFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(timeTableInfoText.getVisibility() != View.GONE){
+            timeTableInfoText.setVisibility(View.GONE);
+        }
+        if(web_view.getVisibility() != View.VISIBLE){
+            web_view.setVisibility(View.VISIBLE);
+        }
+        String url = "http://jwgl.hhhxy.cn/ZNPK/KBFB_ClassSel_rpt.aspx";
+        String postDate = "Sel_XNXQ=20150&Sel_XZBJ=" + classCode + "&type=" + timeTableTypeCode;
+        web_view.postUrl(url,
+                EncodingUtils.getBytes(postDate, "BASE64"));
     }
 }

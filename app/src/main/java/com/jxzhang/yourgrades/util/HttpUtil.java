@@ -110,7 +110,7 @@ public class HttpUtil {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("zfx_flag", "0"));        //主辅修标记
         params.add(new BasicNameValuePair("zxf", "0"));             //
-        params.add(new BasicNameValuePair("sel_xq", "0"));          //选择学期
+        params.add(new BasicNameValuePair("sel_xq", "1"));          //选择学期
         params.add(new BasicNameValuePair("SJ", "0"));              //原始成绩/有效成绩
         params.add(new BasicNameValuePair("SelXNXQ", "2"));         //学期学年
         params.add(new BasicNameValuePair("sel_xn", "2015"));       //学期
